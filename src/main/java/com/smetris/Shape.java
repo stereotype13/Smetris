@@ -14,6 +14,15 @@ public class Shape implements IShape {
 		mIsInPlay = isInPlay;
 	}
 
+	protected void sortBlocks() {
+		Collections.sort(mBlocks, new Comparator<Block>() {
+			@Override
+			public int compare(Block b1, Block b2) {
+				return (b1.getRX() > b2.getRX() && b1.getRY() < b2.getRY()) ? 1 : -1;
+			}
+		});
+	}
+
 	//Implementing IShape
 	public void setGameBoard(IGameBoard gameBoard) {
 		mGameBoard = gameBoard;

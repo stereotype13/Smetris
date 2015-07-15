@@ -10,29 +10,35 @@ public class BlockTest {
 	public void TShapeInitialBlockPositionsTest() {
 		IShape tShape = new TShape(1, true);
 
+		for(Block block : tShape.getBlocks()) {
+			System.out.println("X: " + block.getRX() + " Y: " + block.getRY());
+		}
+
 		//Block 1 x-value should be 1
-		assertThat(tShape.getBlocks().get(0).getRX(), equalTo(1));
+		assertThat(tShape.getBlocks().get(0).getRX(), equalTo(2));
 
 		//Block 1 y-value should be 0
-		assertThat(tShape.getBlocks().get(0).getRY(), equalTo(0));
+		assertThat(tShape.getBlocks().get(0).getRY(), equalTo(1));
 
+		
 		//Block 2 x-value should be 0
-		assertThat(tShape.getBlocks().get(1).getRX(), equalTo(0));
+		assertThat(tShape.getBlocks().get(1).getRX(), equalTo(1));
 
 		//Block 2 y-value should be 1
 		assertThat(tShape.getBlocks().get(1).getRY(), equalTo(1));
-
+		
 		//Block 3 x-value should be 1
-		assertThat(tShape.getBlocks().get(2).getRX(), equalTo(1));
-
+		assertThat(tShape.getBlocks().get(2).getRX(), equalTo(0));
+		
 		//Block 3 y-value should be 1
 		assertThat(tShape.getBlocks().get(2).getRY(), equalTo(1));
 
 		//Block 4 x-value should be 2
-		assertThat(tShape.getBlocks().get(3).getRX(), equalTo(2));
+		assertThat(tShape.getBlocks().get(3).getRX(), equalTo(1));
 
 		//Block 4 y-value should be 1
-		assertThat(tShape.getBlocks().get(3).getRY(), equalTo(1));
+		assertThat(tShape.getBlocks().get(3).getRY(), equalTo(0));
+	
 	}
 
 	@Test
